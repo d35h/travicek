@@ -5,7 +5,10 @@ plugins {
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.6.20-RC2"
 	kotlin("plugin.spring") version "1.6.20-RC2"
+	id("io.gitlab.arturbosch.detekt") version "1.20.0-RC2"
 }
+
+val detektVersion = "1.20.0-RC2"
 
 group = "com.travicek"
 version = "0.0.1-SNAPSHOT"
@@ -24,6 +27,9 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
 	implementation("dev.inmo:tgbotapi:0.38.11")
+
+	detekt("io.gitlab.arturbosch.detekt:detekt-formatting:$detektVersion")
+	detekt("io.gitlab.arturbosch.detekt:detekt-cli:$detektVersion")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("io.projectreactor:reactor-test")
